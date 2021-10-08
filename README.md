@@ -1,2 +1,2 @@
 # Projects_Js
-Javascript Project Repository
+Javascript Project Repository which will contain small projects related to Javascript.
