@@ -1,0 +1,137 @@
+<html>
+<head>
+<style>
+*{
+            margin: .1%;
+        }
+        label{
+			color: #96091c;
+			padding: 0px 0px;
+			font-size: 15px;
+		}
+        table{
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        td{
+            padding: 1%;
+            background-color: #ced1149e;
+            border-radius: 5%;
+        }
+        .serif
+		{
+			font-family:"Times New Roman",Times,serif;
+		}
+		
+		.sansserif 
+		{
+			font-family: Arial, Helvetica, sans-serif;
+		}
+        #centred{
+            /* justify-content: center; */
+            margin-left: 50vw;
+            margin-right: auto;
+            align-items: center;
+            justify-content: center;
+        }
+</style>
+<script type="text/javascript">
+	function validate()
+	{
+		//1) name :check whether empty or not
+		var Name=document.form.uname.value;
+		if( Name== "" ) //blank
+		{
+			alert( "Please provide your name!" );
+            document.form.uname.focus();
+            return false;
+		}
+		
+		//2) name: alphabet only
+	    var alphabet =/^[A-Za-z]+$/;
+		//var pass=document.login.pass.value;
+		if(Name.match(alphabet))
+		{
+			return true;
+		}
+		else
+		{
+			alert( "Please provide valid name!" );			
+            document.form.uname.focus();
+            return false;
+		}
+		
+		//email:using atpos
+		var x = document.login.email.value();
+		var atpos = x.indexOf("@");
+		var dotpos = x.lastIndexOf(".");
+		if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) 
+		{
+			alert("Not a valid email address");
+			return false;
+		}
+	}
+	</script>
+		
+</head>
+<body>
+    <legend style="color: rgb(2, 16, 61);"><h2><label>Student form</label></h2></legend>
+	<!-- code for form creation-->
+	<form name="form" action="welcome.php" method="post" onsubmit="return validate();">
+        <table>
+            <tr>
+                <td>Name: </td>
+                <td><input type="text" name="name" id="student"></td>
+            </tr>
+            <tr>
+                <td>Father's Name:</td>
+                <td><input type="text" name="father" id="stud_fat"></td>
+            </tr>
+            <tr>
+                <td>Mother's Name:</td>
+                <td><input type="text" name="mother" id="stud_mot"></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td><input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><textarea name="address" id="add" cols="30" rows="10"></textarea></td>
+            </tr>
+            <tr>
+                <td>City:</td>
+		<td><select name="City" id="City">
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Vadodra">Vadodra</option>
+                <option value="Surat">Surat</option>
+                <option value="Anand">Anand</option>
+                </select>
+            </tr>
+            <tr>
+                <td>College Name: </td>
+		<td><select name="College" id="College">
+                <option value="IIIT Surat">IIIT Surat</option>
+                <option value="NIT Surat">NIT Surat</option>
+                <option value="DAIICT">DAIICT</option>
+                <option value="DDIT">DDIT</option>
+                </select>
+            </tr>
+            <tr>
+                <td>E-mail id: </td>
+                <td><input type="email" name="em" id="em"></td>
+            </tr>
+            <tr>
+                <td>Contact: </td>
+                <td><input type="number" name="cntct" id="cntct"></td>
+            </tr>
+        </table>
+        <input id="centred" type="submit" value="Submit">
+</form>
+</body>
+</html>
+
