@@ -1,23 +1,33 @@
 <html>
 <head>
 <style>
-*{
-            margin: .1%;
+        body{
+            background-color: black;
+            color: white;
         }
         label{
-			color: #96091c;
+			color: #ee2641;
 			padding: 0px 0px;
 			font-size: 15px;
 		}
         table{
+            display: flex;
+            justify-content: center;
             align-items: center;
-            margin-left: auto;
-            margin-right: auto;
         }
+
         td{
-            padding: 1%;
-            background-color: #ced1149e;
-            border-radius: 5%;
+            padding: 15px 15px;
+            background-color: #f07e519e;
+            border-radius: 8px;               
+        }
+        .heading{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 8px;
+            color: rgb(181, 130, 248)
         }
         .serif
 		{
@@ -76,7 +86,7 @@
 		
 </head>
 <body>
-    <legend style="color: rgb(2, 16, 61);"><h2><label>Student form</label></h2></legend>
+    <h1 class="heading">Student form</h1>
 	<!-- code for form creation-->
 	<form name="form" action="welcome.php" method="post" onsubmit="return validate();">
         <table>
@@ -101,7 +111,7 @@
             </tr>
             <tr>
                 <td>Address:</td>
-                <td><textarea name="address" id="add" cols="30" rows="10"></textarea></td>
+                <td><textarea name="address" id="add"  rows="10"></textarea></td>
             </tr>
             <tr>
                 <td>City:</td>
